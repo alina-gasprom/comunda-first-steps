@@ -1,0 +1,35 @@
+{
+  "components": [
+    {
+      "label": "seria",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_0ctallm",
+        "columns": null
+      },
+      "id": "Field_1fhri5n",
+      "key": "seria",
+      "description": "passport seria"
+    },
+    {
+      "label": "number",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1xymw97",
+        "columns": null
+      },
+      "id": "Field_09zaa68",
+      "key": "number",
+      "description": "passport number"
+    }
+  ],
+  "type": "default",
+  "id": "Form_1t0mhiw",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.25.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.21.0",
+  "schemaVersion": 16
+}

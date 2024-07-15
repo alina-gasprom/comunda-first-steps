@@ -6,3 +6,6 @@ camunda.bpm.admin-user:
 
 server:
   port: 3333
+
+abs:
+  url: "http://localhost:6666"
