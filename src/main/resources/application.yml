@@ -9,3 +9,8 @@ server:
 
 abs:
   url: "http://localhost:6666"
+
+
+logging:
+  level:
+    ru.alina: debug

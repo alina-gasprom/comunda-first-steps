@@ -18,6 +18,9 @@ public class UserEntity {
         return isClient;
     }
 
+    public void setClient(boolean client) {
+        isClient = client;
+    }
 
     @Override
     public String toString() {

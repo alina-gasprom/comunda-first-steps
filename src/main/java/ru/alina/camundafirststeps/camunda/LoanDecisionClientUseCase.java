@@ -2,21 +2,23 @@ package ru.alina.camundafirststeps.camunda;
 
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import ru.alina.camundafirststeps.dto.CreditRequest;
 import ru.alina.camundafirststeps.service.UserService;
+import ru.alina.camundafirststeps.web.client.AbsUserWebClient;
 
 @Component
-public class LoanDecisionUseCase implements JavaDelegate {
+public class LoanDecisionClientUseCase implements JavaDelegate {
+    private static final Logger log = LoggerFactory.getLogger(AbsUserWebClient.class);
     private final UserService userService;
 
-    public LoanDecisionUseCase(UserService userService) {
+    public LoanDecisionClientUseCase(UserService userService) {
         this.userService = userService;
     }
 
     @Override
     public void execute(DelegateExecution delegateExecution) {
-        boolean des = userService.isUserExist(new CreditRequest(1, 1L));
-        delegateExecution.setVariable("isCreditApproved", des);
+        log.debug("decision {}", "user can get a credit");
     }
 }

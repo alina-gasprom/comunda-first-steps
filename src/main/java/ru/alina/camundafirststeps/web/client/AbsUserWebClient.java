@@ -10,7 +10,6 @@ import ru.alina.camundafirststeps.entity.UserEntity;
 import ru.alina.camundafirststeps.web.client.properties.ABSProperties;
 
 import java.net.URI;
-import java.util.Objects;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
 
@@ -31,7 +30,9 @@ public class AbsUserWebClient {
 
         return restClient.post().uri(uri).accept(APPLICATION_JSON).body(creditRequest).exchange((clientRequest, clientResponse) -> {
             if (clientResponse.getStatusCode() == HttpStatus.OK) {
-                return Objects.requireNonNull(clientResponse.bodyTo(UserEntity.class)).isClient();
+                UserEntity userEntity = clientResponse.bodyTo(UserEntity.class);
+                log.debug("userEntity: {}", userEntity);
+                return userEntity.isClient();
             } else {
                 log.warn("unexpected error {}", clientResponse.getStatusCode());
                 throw new RuntimeException();
